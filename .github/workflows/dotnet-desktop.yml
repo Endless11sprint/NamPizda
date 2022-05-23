@@ -18,7 +18,7 @@ jobs:
       uses: nuget/setup-nuget@v1
       
     - name: Setup MNС
-      run: dotnet add package Microsoft.Net.Compilers.Toolset 
+      run: dotnet add package Microsoft.VisualStudio.Shell.15.0 --version 17.2.32505.113 
       
       
     
