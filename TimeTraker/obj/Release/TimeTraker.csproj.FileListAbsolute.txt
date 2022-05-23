@@ -1,0 +1,4 @@
+C:\Users\karkr\Desktop\TimeTraker-master1\TimeTraker\obj\Release\TimeTraker.csprojResolveAssemblyReference.cache
+C:\Users\karkr\Desktop\TimeTraker-master1\TimeTraker\obj\Release\TimeTraker.MainWinTime.resources
+C:\Users\karkr\Desktop\TimeTraker-master1\TimeTraker\obj\Release\TimeTraker.Properties.Resources.resources
+C:\Users\karkr\Desktop\TimeTraker-master1\TimeTraker\obj\Release\TimeTraker.csproj.GenerateResource.Cache
