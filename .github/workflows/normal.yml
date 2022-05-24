@@ -1,6 +1,8 @@
 name: EZRep Build
 on:
   push:
+    tags:
+      - '*'
     branches: main
 
 jobs:
@@ -35,6 +37,6 @@ jobs:
         name: EZRepBundle
         path: "./dist"
 
-
+        tag: ${{ github.ref }}
 
         
