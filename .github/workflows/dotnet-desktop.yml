@@ -18,7 +18,7 @@ jobs:
       uses: nuget/setup-nuget@v1
       
     - name: Setup MNС
-      run: dotnet add package Microsoft.VisualStudio.Shell.15.0 --version 17.2.32505.113 
+      run: C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\devenv.com" /build Release TimeTraker.sln 
       
       
     
