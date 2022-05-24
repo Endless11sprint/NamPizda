@@ -15,19 +15,17 @@ jobs:
 
     - name: Setup NuGet
       uses: nuget/setup-nuget@v1
-      
-    - name: Navigate to Workspace
-      run: cd $GITHUB_WORKSPACE
+       
 
     - name: Create Build Directory
-      run: mkdir _build
+      run: mkdir build
       
     - name: Restore Packages
       run: nuget restore TimeTraker.sln
 
     - name: Build Solution
       run: |
-        msbuild.exe TimeTraker.sln /nologo /nr:false /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:platform="Any CPU" /p:configuration="Release" /p:PackageLocation="../_build"
+        msbuild.exe TimeTraker.sln /nologo /nr:false /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:platform="Any CPU" /p:configuration="Release" /p:PackageLocation="../build"
     - name: Build Solution
       run: |
         msbuild.exe TimeTraker.sln /p:platform="Any CPU" /p:configuration="Release"
@@ -35,7 +33,7 @@ jobs:
       uses: actions/upload-artifact@v1.0.0
       with:
         name: EZRepBundle
-        path: "./_build"
+        path: "./build"
 
 
 
