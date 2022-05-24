@@ -25,9 +25,9 @@ jobs:
     - name: Restore Packages
       run: nuget restore TimeTraker.sln
 
-    - name: Build Solution
-      run: |
-        msbuild.exe TimeTraker.sln /nologo /nr:false /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:platform="Any CPU" /p:configuration="Release" /p:PackageLocation="../dist"
+    #- name: Build Solution
+      #run: |
+        #msbuild.exe TimeTraker.sln /nologo /nr:false /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:platform="Any CPU" /p:configuration="Release" /p:PackageLocation="../dist"
     - name: Build Solution
       run: |
         msbuild.exe TimeTraker.sln /p:platform="Any CPU" /p:configuration="Release"
@@ -35,7 +35,7 @@ jobs:
       uses: svenstaro/upload-release-action@v2
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
-        file: ../dist/TimeTraker.exe
+        file: TimeTraker\bin\Release\TimeTraker.exe
         asset_name: mything
         tag: ${{ github.ref }}
         overwrite: true
