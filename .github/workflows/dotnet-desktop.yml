@@ -2,6 +2,8 @@ name: Build
 
 on:
   push:
+    tags:
+      - '*'
     branches: main
 
 jobs:
@@ -47,3 +49,4 @@ jobs:
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         file: dist/${{ matrix.artifact_name }}
+        tag: ${{ github.ref }}
