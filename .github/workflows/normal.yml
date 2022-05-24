@@ -35,7 +35,7 @@ jobs:
     - name: Build Solution
       run: |
         msbuild.exe TimeTraker.sln /p:platform="Any CPU" /p:configuration="Release"
-        Compress-7Zip "Release" "TimeTraker\bin\Release\TimeTraker.exe" "TimeTraker\Database1.mdf" "MyProjekt" -Format Zip
+        Compress-7Zip "Release" "TimeTraker\bin\Release\TimeTraker.exe" "TimeTraker\Database1.mdf" -OutputFile "MyProjekt.zip" -Format Zip
     - name: Upload binaries to release
       uses: svenstaro/upload-release-action@v2
       with:
@@ -45,5 +45,4 @@ jobs:
         tag: ${{ github.ref }}
         overwrite: true
         body: "This is my release text"
-
-        
+       
